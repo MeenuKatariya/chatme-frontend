@@ -48,7 +48,7 @@ const Login = () => {
       };
 
       const { data } = await axios.post(
-        "http://localhost:3000/api/user/login",
+        "http://localhost:5000/api/user/login",
         { email, password },
         config
       );
@@ -78,7 +78,7 @@ const Login = () => {
   };
   return (
     <VStack spacing="5px" color="black">
-      <FormControl id="first-name" isRequired>
+      <FormControl id="first-Email" isRequired>
         <FormLabel>Email </FormLabel>
         <Input
         value={email}

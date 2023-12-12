@@ -104,11 +104,12 @@ const Signup = () => {
         },
       };
 
-      const { data } = axios.post(
-        "http://localhost:3000/api/user",
+      const { data } = await axios.post(
+        "http://localhost:5000/api/user",
         { name, email, password, pic },
         config
       );
+      // console.log(data);
       toast({
         title: "Register Successfull",
         status: "success",
@@ -116,6 +117,7 @@ const Signup = () => {
         isClosable: true,
         position: "bottom",
       });
+
       localStorage.setItem("userInfo", JSON.stringify(data));
       setPicLoading(false);
       navigate("/chats");
@@ -151,7 +153,7 @@ const Signup = () => {
         />
       </FormControl>
 
-      <FormControl id="password" isRequired>
+      <FormControl id="passwordfirst" isRequired>
         <FormLabel>Password</FormLabel>
         <InputGroup>
           <Input
@@ -178,7 +180,8 @@ const Signup = () => {
 
         <InputGroup>
           <Input
-            type={password}
+            type="password"
+            value={confirmPassword}
             placeholder="Confirm Password"
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
