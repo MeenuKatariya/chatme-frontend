@@ -11,7 +11,8 @@ import {
   useDisclosure,
   useToast,
   Input,
-  Box
+  Box,
+  Spinner
 } from "@chakra-ui/react";
 import React, { useContext, useState } from "react";
 import { ChatContext } from "../../Context/ChatProvider";
@@ -55,6 +56,7 @@ const GroupChatModel = ({ children }) => {
         isClosable: true,
         position: "bottom-left",
       });
+      setLoading(false)
    }
   }
 
@@ -152,7 +154,8 @@ const GroupChatModel = ({ children }) => {
                 onChange={(e) => handleSearch(e.target.value)}
               />
             </FormControl>
-            <Box w="100%" d="flex" flexWrap="wrap">
+           
+            <Box w="100%" display="flex" flexWrap="wrap">
               {selectedUsers.map((u) => (
                 <UserBadgeItem
                   key={u._id}
