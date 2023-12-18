@@ -5,7 +5,6 @@ import { Box, Text } from "@chakra-ui/layout";
 
 const UserListItem = ({ user,handleFunction}) => {
     console.log(handleFunction)
-    // const { user } = useContext(ChatContext);
   return (
     <Box
       onClick={handleFunction}

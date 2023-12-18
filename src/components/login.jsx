@@ -8,8 +8,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { FaEye } from "react-icons/fa6";
-import { FaEyeSlash } from "react-icons/fa";
+import { IoMdEye, IoIosEyeOff } from "react-icons/io";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
@@ -99,18 +98,20 @@ const Login = () => {
 
           <InputRightElement width="4.5rem">
             {show ? (
-              <FaEye onClick={handleClick} />
+              <IoMdEye onClick={handleClick} />
             ) : (
-              <FaEyeSlash onClick={handleClick} />
+              <IoIosEyeOff onClick={handleClick} />
             )}
           </InputRightElement>
         </InputGroup>
       </FormControl>
 
       <Button
+       bgColor="black"
+       color="white"
+       _hover={{ bg: "#454545" }}
         colorScheme="blue"
         width="100%"
-        color="white"
         style={{ marginTop: 15 }}
         onClick={submitHandler}
         isLoading={loading}
@@ -118,7 +119,7 @@ const Login = () => {
         Login
       </Button>
 
-      <Button
+      {/* <Button
         variant="solid"
         colorScheme="red"
         width="100%"
@@ -128,7 +129,7 @@ const Login = () => {
         }}
       >
         Get Guest User Credentials
-      </Button>
+      </Button> */}
     </VStack>
   );
 };

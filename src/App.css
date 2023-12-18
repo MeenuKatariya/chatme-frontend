@@ -3,7 +3,7 @@
 .App{
   min-height: 100vh;
   display: flex;
-  background-image:url('./assets/background.jpg');
+  background-color:#f6f6f6;
   background-size: cover;
   background-position: center;
   color:black
@@ -20,4 +20,40 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.bell-notification {
+  color: #fff;
+  position: relative;
+  /* animation: bell 1s linear infinite alternate-reverse; */
+  transform-origin: top;
+}
+
+@keyframes bell {
+  0% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+.fa-bell {
+  font-size: 20px;
+}
+
+.bell-notification::after {
+  content: attr(current-count);
+  position: absolute;
+  top:0%;
+  right: 0%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  border: 1px solid #01111b;
 }

@@ -8,8 +8,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { FaEye } from "react-icons/fa6";
-import { FaEyeSlash } from "react-icons/fa";
+import { IoMdEye, IoIosEyeOff } from "react-icons/io";
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -139,7 +138,9 @@ const Signup = () => {
       <FormControl id="first-name" isRequired>
         <FormLabel>Name </FormLabel>
         <Input
-          placeholder="Enter Your Name"
+         border="1px solid black"
+         borderRadius="10px"
+        placeholder="Enter Your Name"
           onChange={(e) => setName(e.target.value)}
         />
         <img src="/list_4472515.png" alt="" />
@@ -147,6 +148,8 @@ const Signup = () => {
       <FormControl id="first-email" isRequired>
         <FormLabel>Email </FormLabel>
         <Input
+         border="1px solid black"
+         borderRadius="10px"
           type="email"
           placeholder="Enter Your Email"
           onChange={(e) => setEmail(e.target.value)}
@@ -157,6 +160,8 @@ const Signup = () => {
         <FormLabel>Password</FormLabel>
         <InputGroup>
           <Input
+           border="1px solid black"
+           borderRadius="10px"
             type={show ? "text" : "password"}
             placeholder="Enter Your Password"
             onChange={(e) => setPassword(e.target.value)}
@@ -164,9 +169,9 @@ const Signup = () => {
 
           <InputRightElement width="4.5rem">
             {show ? (
-              <FaEye onClick={handleClick} />
+              <IoMdEye onClick={handleClick} />
             ) : (
-              <FaEyeSlash onClick={handleClick} />
+              <IoIosEyeOff onClick={handleClick} />
             )}
             {/* <Button h="1.75rem" size="sm" >
              { show? "Hide" : "Show"}
@@ -180,6 +185,8 @@ const Signup = () => {
 
         <InputGroup>
           <Input
+           border="1px solid black"
+           borderRadius="10px"
             type="password"
             value={confirmPassword}
             placeholder="Confirm Password"
@@ -192,8 +199,10 @@ const Signup = () => {
       <FormControl>
         <FormLabel>Upload your Picture</FormLabel>
         <Input
-          type="file"
-          p={1.5}
+         border="none"
+         type="file"
+          pl={0}
+          pt={1}
           accept="image/*"
           onChange={(e) => {
             postDetails(e.target.files[0]);
@@ -202,9 +211,11 @@ const Signup = () => {
       </FormControl>
 
       <Button
-        colorScheme="blue"
+        // colorScheme="blue"
+        bgColor="black"
         width="100%"
         color="white"
+        _hover={{ bg: "#454545" }}
         style={{ marginTop: 15 }}
         onClick={submitHandler}
         isLoading={picloading}
