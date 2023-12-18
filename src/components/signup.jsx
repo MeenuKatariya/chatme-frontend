@@ -104,7 +104,7 @@ const Signup = () => {
       };
 
       const { data } = await axios.post(
-        "http://localhost:5000/api/user",
+        "https://chatme-production-d624.up.railway.app/api/user",
         { name, email, password, pic },
         config
       );

@@ -20,7 +20,7 @@ import io from "socket.io-client";
 
 import { ThreeDots } from "react-loader-spinner";
 
-const ENDPOINT = "http://localhost:5000"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
+const ENDPOINT = "https://chatme-production-d624.up.railway.app/"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -47,7 +47,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `http://localhost:5000/api/message/${selectedChat._id}`,
+        `https://chatme-production-d624.up.railway.app/api/message/${selectedChat._id}`,
         config
       );
       setMessages(data);
@@ -111,7 +111,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          "http://localhost:5000/api/message",
+          "https://chatme-production-d624.up.railway.app/api/message",
           {
             content: newMessage,
             chatId: selectedChat,

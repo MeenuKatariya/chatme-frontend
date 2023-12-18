@@ -52,7 +52,7 @@ function SideDrawer() {
 
   const logoutHandler = () => {
     localStorage.removeItem("userInfo");
-    navigate.push("/");
+    navigate("/");
   };
 
   const handleSearch = async () => {
@@ -76,7 +76,7 @@ function SideDrawer() {
         },
       };
 
-      const { data } = await axios.get(`http://localhost:5000/api/user?search=${search}`, config);
+      const { data } = await axios.get(`https://chatme-production-d624.up.railway.app/api/user?search=${search}`, config);
 
       setLoading(false);
       setSearchResult(data);
@@ -104,7 +104,7 @@ function SideDrawer() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.post(`http://localhost:5000/api/chat`, { userId }, config);
+      const { data } = await axios.post(`https://chatme-production-d624.up.railway.app/api/chat`, { userId }, config);
 
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);
