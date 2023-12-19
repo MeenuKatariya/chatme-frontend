@@ -47,7 +47,7 @@ const Login = () => {
       };
 
       const { data } = await axios.post(
-        "https://chatme-production-d624.up.railway.app/api/user/login",
+        "https://chatme-production-6bda.up.railway.app/api/user/login",
         { email, password },
         config
       );

@@ -43,7 +43,7 @@ const GroupChatModel = ({ children }) => {
     },
   };
 
-  const { data } = await axios.get(`https://chatme-production-d624.up.railway.app/api/user?search=${search}`, config)
+  const { data } = await axios.get(`https://chatme-production-6bda.up.railway.app/api/user?search=${search}`, config)
   console.log(data);
   setLoading(false);
   setSearchResult(data);
@@ -80,7 +80,7 @@ const GroupChatModel = ({ children }) => {
         },
       };
       const { data } = await axios.post(
-        `https://chatme-production-d624.up.railway.app/api/chat/group`,
+        `https://chatme-production-6bda.up.railway.app/api/chat/group`,
         {
           name: groupChatName,
           users: JSON.stringify(selectedUsers.map((u) => u._id)),
